@@ -1,0 +1,34 @@
+{
+  "title": "CustomerEvents",
+  "x-stoplight": {
+    "id": "t4c6xhkl0obhk"
+  },
+  "type": "object",
+  "properties": {
+    "eventId": {
+      "type": "string",
+      "x-stoplight": {
+        "id": "oy7ir6byhia4u"
+      }
+    },
+    "objectOperation": {
+      "type": "string",
+      "x-stoplight": {
+        "id": "kysdc3kx0k91e"
+      }
+    },
+    "eventDate": {
+      "type": "string",
+      "x-stoplight": {
+        "id": "sdnwlmr55099y"
+      },
+      "format": "date-time"
+    },
+    "data": {
+      "$ref": "./Customer.json",
+      "x-stoplight": {
+        "id": "5xmifeitvlj48"
+      }
+    }
+  }
+}

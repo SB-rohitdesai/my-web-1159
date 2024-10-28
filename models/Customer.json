@@ -1,0 +1,1918 @@
+{
+  "title": "Customer",
+  "x-stoplight": {
+    "id": "sttjkb26ohz8y"
+  },
+  "type": "object",
+  "properties": {
+    "businessPartnerId": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "maxLength": 10,
+      "example": "1410166255",
+      "description": "Key identifying a Business Partner in the SAP system. This key is unique within a client.",
+      "x-stoplight": {
+        "id": "we60lert7u410"
+      }
+    },
+    "organizationCustomerName1": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "maxLength": 40,
+      "example": "FCABTP",
+      "description": "First name field of a Business Partner (organization category)",
+      "x-stoplight": {
+        "id": "yoov319sdiiza"
+      }
+    },
+    "organizationCustomerName2": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "maxLength": 40,
+      "example": "FORMATION CONSEIL",
+      "description": "Second name field of a Business Partner (organization category)",
+      "x-stoplight": {
+        "id": "0x0084g3k9eb5"
+      }
+    },
+    "languageCode": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "maxLength": 2,
+      "example": "FR",
+      "description": "Language key",
+      "x-stoplight": {
+        "id": "f9w3m507qvqcp"
+      }
+    },
+    "customerSearchTerm1": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "maxLength": 20,
+      "example": "FCABTP",
+      "description": "Denotes the term that you define for a Business Partner, and via which you can restrict the search for a Business Partner.",
+      "x-stoplight": {
+        "id": "zhxmgm08naox6"
+      }
+    },
+    "customerSearchTerm2": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "maxLength": 20,
+      "example": "FORMATION CONSEIL",
+      "description": "An additional search term for a Business Partner",
+      "x-stoplight": {
+        "id": "2r6m0gxdpmk60"
+      }
+    },
+    "customerTitle": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "maxLength": 4,
+      "example": "0001",
+      "description": "Key for academic title.",
+      "x-stoplight": {
+        "id": "3xbbkpx3eqet0"
+      }
+    },
+    "identifications": {
+      "type": [
+        "array"
+      ],
+      "minItems": 1,
+      "description": "The business partner identification helps to maintain a record of business partners' identification numbers according to their identification types, for further assign/retrieve specific information related to the business partner. Example: For France, you may define FR:SIREN and FR:SIRET as Business partner identification number types and set their respective values as business partner identification numbers. Then use the business partner types SIREN and SIRET to store and retrieve the tax number information such as VAT.",
+      "items": {
+        "type": "object",
+        "properties": {
+          "customerIdType": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "maxLength": 6,
+            "example": "BUP002",
+            "description": "A document (such as an ID card or driver's license) or an entry in a system of records (such as a commercial register) whose key can be stored as an attribute for a Business Partner.",
+            "x-stoplight": {
+              "id": "4iu9i3jan9s16"
+            }
+          },
+          "customerIdNumber": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "maxLength": 60,
+            "example": "A882934789",
+            "description": "Number that serves to identify a Business Partner, such as driver's license or ID card number.",
+            "x-stoplight": {
+              "id": "kel9oynri04uz"
+            }
+          },
+          "customerIdEntryDate": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "format": "date",
+            "example": "2020-04-16",
+            "description": "Date on which the ID number was registered or assigned by the appropriate authority.",
+            "x-stoplight": {
+              "id": "8p9mpopw31v1q"
+            }
+          },
+          "customerIdCountry": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "maxLength": 3,
+            "example": "FR",
+            "description": "Country in which an ID number was assigned, or in which the number is valid.",
+            "x-stoplight": {
+              "id": "5g8dxb7a2b359"
+            }
+          },
+          "customerIdRegion": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "maxLength": 3,
+            "example": "49",
+            "description": "Region in which ID number is valid or was assigned.",
+            "x-stoplight": {
+              "id": "3e43mgk4j9q97"
+            }
+          },
+          "externalCustomerNumber": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "maxLength": 20,
+            "example": "1310000503",
+            "description": "Business partner number from an external system or a legacy system. If the current business partner is known under a different number in an external system, you can store this number here for information purposes. Fot the context of Vinci the external number represents the number in legacy systems (SI COMPTA and Kheops)",
+            "x-stoplight": {
+              "id": "wfgn5nnzrm8r5"
+            }
+          }
+        },
+        "x-stoplight": {
+          "id": "8f144kwn3ddio"
+        }
+      },
+      "x-stoplight": {
+        "id": "km9x7dfoa1dwt"
+      }
+    },
+    "addresses": {
+      "type": [
+        "array"
+      ],
+      "minItems": 1,
+      "description": "Addresses associated with a business partner.",
+      "items": {
+        "type": "object",
+        "properties": {
+          "addressId": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "maxLength": 10,
+            "example": "96085",
+            "description": "Internal key for identifying a BusinessAddress Services address.",
+            "x-stoplight": {
+              "id": "oz18o5bm2pfva"
+            }
+          },
+          "houseNumber": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "maxLength": 10,
+            "example": "84",
+            "description": "House number as part of an address",
+            "x-stoplight": {
+              "id": "rzno9oq7b0hih"
+            }
+          },
+          "streetName1": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "maxLength": 60,
+            "example": "Route Nationale",
+            "description": "Street name as part of the address",
+            "x-stoplight": {
+              "id": "h2ys8a6qe9ac2"
+            }
+          },
+          "streetName2": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "maxLength": 40,
+            "example": "Route de Bayonne à Briscous",
+            "description": "Street name as part of the address",
+            "x-stoplight": {
+              "id": "kydpfkindmglk"
+            }
+          },
+          "streetName3": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "maxLength": 40,
+            "example": "CD 312",
+            "description": "Street name as part of the address",
+            "x-stoplight": {
+              "id": "vqq3r10xpgnlm"
+            }
+          },
+          "district": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "maxLength": 40,
+            "example": "CA010413",
+            "description": "City or district supplement",
+            "x-stoplight": {
+              "id": "c4mukyqsfmrb3"
+            }
+          },
+          "postalCode": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "maxLength": 10,
+            "example": "59710",
+            "description": "Postal code as part of the address",
+            "x-stoplight": {
+              "id": "wb54lrfg8e89w"
+            }
+          },
+          "poBox": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "maxLength": 10,
+            "example": "CS20043",
+            "description": "PO Box number as part of an address",
+            "x-stoplight": {
+              "id": "35he0hify2fgk"
+            }
+          },
+          "city": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "maxLength": 40,
+            "example": "Bromont",
+            "description": "City name as part of the address",
+            "x-stoplight": {
+              "id": "3q69zjgv76duz"
+            }
+          },
+          "differentCity": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "maxLength": 40,
+            "example": "DRE PCA PLATEFORME COMPTABILITE",
+            "description": "City of residence which is different from the postal city.",
+            "x-stoplight": {
+              "id": "6r1lg9axkypmc"
+            }
+          },
+          "region": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "maxLength": 3,
+            "example": "QC",
+            "description": "Region (state, province, county)",
+            "x-stoplight": {
+              "id": "jqbd9tdz1fnj1"
+            }
+          },
+          "countryCode": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "maxLength": 3,
+            "example": "CA",
+            "description": "The country/region key contains information which the system uses to check entries such as the length of the postal code or bank account number.",
+            "x-stoplight": {
+              "id": "djnq461mf3x9w"
+            }
+          },
+          "county": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "maxLength": 40,
+            "example": "District",
+            "description": "Specifies the county's name.",
+            "x-stoplight": {
+              "id": "7jv8vx0vkl79n"
+            }
+          },
+          "taxJurisdiction": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "maxLength": 15,
+            "example": "CAQC",
+            "description": "Specifies the tax jurisdiction.",
+            "x-stoplight": {
+              "id": "tbsjboja1k817"
+            }
+          },
+          "transportationZone": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "maxLength": 10,
+            "example": "Z000000001",
+            "description": "Transportation zone to or from which the goods are delivered.",
+            "x-stoplight": {
+              "id": "6dlha6hh8kopm"
+            }
+          },
+          "emailAddresses": {
+            "type": [
+              "array",
+              "null"
+            ],
+            "description": "Email addresses",
+            "x-stoplight": {
+              "id": "v9mmbarlz1wef"
+            },
+            "items": {
+              "x-stoplight": {
+                "id": "k2b4daa78wqql"
+              },
+              "type": "object",
+              "properties": {
+                "emailAddress": {
+                  "type": [
+                    "string",
+                    "null"
+                  ],
+                  "x-stoplight": {
+                    "id": "ns19eh3keyq2k"
+                  },
+                  "description": "emailAddress",
+                  "maxLength": 241,
+                  "example": "marine.masson@sodilor.fr"
+                }
+              }
+            }
+          },
+          "phoneNumbers": {
+            "type": [
+              "array",
+              "null"
+            ],
+            "description": "Phone number: dialing code + number",
+            "items": {
+              "x-stoplight": {
+                "id": "ri9v94e8olbee"
+              },
+              "type": "object",
+              "properties": {
+                "phoneNumber": {
+                  "type": [
+                    "string",
+                    "null"
+                  ],
+                  "x-stoplight": {
+                    "id": "ent6oxnirm3wf"
+                  },
+                  "example": "665323730",
+                  "description": "Phone number: dialing code + number",
+                  "maxLength": 30
+                }
+              }
+            },
+            "x-stoplight": {
+              "id": "vprog5mbrvms8"
+            }
+          },
+          "mobilePhoneNumbers": {
+            "type": [
+              "array",
+              "null"
+            ],
+            "description": "Mobile telephone number consisting of dialing code and number, but without country code.",
+            "items": {
+              "x-stoplight": {
+                "id": "amer25s34sd20"
+              },
+              "type": "object",
+              "properties": {
+                "mobilePhoneNumber": {
+                  "type": [
+                    "string",
+                    "null"
+                  ],
+                  "x-stoplight": {
+                    "id": "ltxp02lan89fz"
+                  },
+                  "description": "Mobile telephone number consisting of dialing code and number, but without country code.",
+                  "example": "665323730",
+                  "maxLength": 30
+                }
+              }
+            },
+            "x-stoplight": {
+              "id": "q0ysuud00l0t1"
+            }
+          },
+          "faxNumbers": {
+            "type": "array",
+            "example": "160783799",
+            "description": "Fax number: dialing code + number",
+            "items": {
+              "x-stoplight": {
+                "id": "mzxsj4f0vbajd"
+              },
+              "type": "object",
+              "properties": {
+                "faxNumber": {
+                  "type": [
+                    "string",
+                    "null"
+                  ],
+                  "x-stoplight": {
+                    "id": "8y56qfvalvl3j"
+                  },
+                  "maxLength": 30,
+                  "description": "Fax number: dialing code + number",
+                  "example": "160783799"
+                }
+              }
+            },
+            "x-stoplight": {
+              "id": "6joxtqp7zmvlj"
+            }
+          },
+          "timeZone": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "maxLength": 6,
+            "example": "EST",
+            "description": "Time zone as part of an address",
+            "x-stoplight": {
+              "id": "u2z4s2a76uhhk"
+            }
+          },
+          "languageCode": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "maxLength": 2,
+            "example": "FR",
+            "description": "Language key",
+            "x-stoplight": {
+              "id": "zuscfjejsuj5u"
+            }
+          }
+        },
+        "x-stoplight": {
+          "id": "jqygean78xj9g"
+        }
+      },
+      "x-stoplight": {
+        "id": "sa757ijyo1yel"
+      }
+    },
+    "bankInformation": {
+      "type": [
+        "array"
+      ],
+      "minItems": 0,
+      "description": "Bank information details of a business partner: IBAN, Account number, Bank agency data, etc.",
+      "items": {
+        "type": "object",
+        "properties": {
+          "Iban": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "maxLength": 34,
+            "example": "FR7610096180470007637600345",
+            "description": "IBAN (International Bank Account Number)",
+            "x-stoplight": {
+              "id": "w550mwpk590kq"
+            }
+          },
+          "bankIdentification": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "maxLength": 4,
+            "example": "1",
+            "description": "Key identifying a business partner's bank details.",
+            "x-stoplight": {
+              "id": "kaqsqz8mxbc7e"
+            }
+          },
+          "bankCountryCode": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "maxLength": 3,
+            "example": "FR",
+            "description": "Identifies the country in which the bank is based.",
+            "x-stoplight": {
+              "id": "frxn6oe442not"
+            }
+          },
+          "bankName": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "maxLength": 60,
+            "example": "LYONNAISE DE BANQUE LB",
+            "description": "The name under which the bank operates. The name of the bank is comprised of : The bank name, The name of the branch office",
+            "x-stoplight": {
+              "id": "hevv9ii167bnf"
+            }
+          },
+          "bankNumber": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "maxLength": 18,
+            "example": "10467617",
+            "description": "Bank number",
+            "x-stoplight": {
+              "id": "18i4kodfvtam7"
+            }
+          },
+          "bankControlKey": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "maxLength": 2,
+            "example": "76",
+            "description": "The eld contains a check key for the combination bank number and bank account number. The value differs for different countries.",
+            "x-stoplight": {
+              "id": "hoiib6l16fqpu"
+            }
+          },
+          "swiftBicCode": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "maxLength": 11,
+            "example": "BREDFRPPXXX",
+            "description": "Uniquely identifies a bank throughout the world.",
+            "x-stoplight": {
+              "id": "wqzxggx8pbou9"
+            }
+          },
+          "accountHolderName": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "maxLength": 60,
+            "example": "Jean Lutz SA",
+            "description": "Account holder name",
+            "x-stoplight": {
+              "id": "8dw4fail8g9ct"
+            }
+          },
+          "accountName": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "maxLength": 40,
+            "example": "BNP PARIBAS",
+            "description": "Here you can enter another name that the payment program can use if the name of the account holder is not the same as the name of the Business Partner.",
+            "x-stoplight": {
+              "id": "1ypmlyl9y17el"
+            }
+          },
+          "accountNumber": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "maxLength": 15,
+            "example": "2004101011",
+            "description": "This eld contains the number under which the account is managed at the bank.",
+            "x-stoplight": {
+              "id": "pxdo83zre1m4q"
+            }
+          },
+          "cityName": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "maxLength": 35,
+            "example": "97123 BAILLIF",
+            "description": "City name",
+            "x-stoplight": {
+              "id": "049v420fu61fn"
+            }
+          }
+        },
+        "x-stoplight": {
+          "id": "plboxyggvoioz"
+        }
+      },
+      "x-stoplight": {
+        "id": "megutoebatkvg"
+      }
+    },
+    "customer": {
+      "type": "object",
+      "description": "Is a Business Partner designated to represent entities that purchase   goods or services from Vinci Construction. The customer role encompasses any   individual or organization engaged in commercial transactions with the   company, receiving invoices, and often responsible for making payments. A Customer can be external or internal.",
+      "properties": {
+        "customerId": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "maxLength": 10,
+          "example": "1410005552",
+          "description": "Gives an alphanumeric key, which clearly identifies the customer or vendor in the SAP system.",
+          "x-stoplight": {
+            "id": "8vytwpz2qptkl"
+          }
+        },
+        "createdByUser": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "maxLength": 12,
+          "example": "FRP20233",
+          "description": "Name with which the user who entered the master record was logged on in SAP ERP.",
+          "x-stoplight": {
+            "id": "v79rszhwewwjh"
+          }
+        },
+        "creationDate": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date-time",
+          "example": "2023-08-17T00:00:00Z",
+          "description": "Date on which the master record, or the part of the master record being viewed, was created.",
+          "x-stoplight": {
+            "id": "vdqzyse8j0cz0"
+          }
+        },
+        "customerName": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "maxLength": 35,
+          "example": "ED2S ETANCHEITE DES 2 SAVOIE EN ABR",
+          "description": "Customer name",
+          "x-stoplight": {
+            "id": "p2x92xzi3i9gw"
+          }
+        },
+        "customerType": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "maxLength": 4,
+          "description": "If KNA1-KOTKD in Z++1 ou Z100 -> N (normal), If KNA1-KOTKD in Z++7 -> K (occasionnel Kheops), If KNA1-KOTKD in Z++O ->C (occasionnel CRM)",
+          "x-stoplight": {
+            "id": "wnelhg9jkw98e"
+          }
+        },
+        "customerAccountGroup": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "maxLength": 4,
+          "example": "Z141",
+          "description": "The account group is a classifying feature within customer master records. It determines the number range of the customer account number, whether the number is assigned by the user or by the system, and the necessary or possible specifications in the master record.",
+          "x-stoplight": {
+            "id": "u6l3y3h4obrwm"
+          }
+        },
+        "customerClassification": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "maxLength": 2,
+          "example": "1",
+          "description": "Species a classification of the customer (For example, classifies the customer as a bulk purchaser).",
+          "x-stoplight": {
+            "id": "q1j7hwh4adklc"
+          }
+        },
+        "bilingIsBlockedForCustomer": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "maxLength": 2,
+          "example": "Z5",
+          "description": "Indicates if the processing of billing documents is blocked for the customer in all sales areas.",
+          "x-stoplight": {
+            "id": "msqcxud4rqoch"
+          }
+        },
+        "isDeliveryBlocked": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "maxLength": 2,
+          "example": "ZF",
+          "description": "Indicates if delivery processing is blocked for the customer in all sales areas.",
+          "x-stoplight": {
+            "id": "0odqg4a7nl4ok"
+          }
+        },
+        "isOrderBlockedForCustomer": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "maxLength": 2,
+          "example": "1",
+          "description": "Indicates if sales order processing is blocked for the customer in all sales areas.",
+          "x-stoplight": {
+            "id": "89p1ntmgmoo4c"
+          }
+        },
+        "isPostingBlocked": {
+          "type": [
+            "boolean",
+            "null"
+          ],
+          "example": true,
+          "description": "Indicates that the account is blocked for posting for all company codes.",
+          "x-stoplight": {
+            "id": "rfhiz76jxpp4w"
+          }
+        },
+        "supplierAccountNumber": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "maxLength": 10,
+          "example": "1410142650",
+          "description": "Account number which the supplier uses for our company.",
+          "x-stoplight": {
+            "id": "p94dwzxe3ixyy"
+          }
+        },
+        "fiscalAdress": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "maxLength": 10,
+          "example": "1422681005",
+          "description": "Account number of another master record in which the official address is stored. This address is used, for example, for tax reports to the tax authorities in Italy.",
+          "x-stoplight": {
+            "id": "pyvpws3vlz3ud"
+          }
+        },
+        "industryKey": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "maxLength": 4,
+          "example": "1",
+          "description": "An industry is a distinct group of companies with the same basic business activity. The industry key is used in selecting data for evaluations (for example, a vendor master data list). ",
+          "x-stoplight": {
+            "id": "5d7h61dse0hgp"
+          }
+        },
+        "vatRegistrationNumber": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "maxLength": 20,
+          "example": "FR61247600729",
+          "description": "VAT registration number (VAT reg. no.) of the customer, vendor, or your company code.",
+          "x-stoplight": {
+            "id": "s9yim5g9c9ohr"
+          }
+        },
+        "taxNumber1": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "maxLength": 16,
+          "example": "43416098200022",
+          "description": "Species the tax number",
+          "x-stoplight": {
+            "id": "p5j9brp5x5vzv"
+          }
+        },
+        "taxNumber2": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "maxLength": 11,
+          "example": "434160982",
+          "description": "Species additional tax number",
+          "x-stoplight": {
+            "id": "lv4wmk8e00xvs"
+          }
+        },
+        "taxNumberType": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "maxLength": 2,
+          "example": "00",
+          "description": "Tax number type. ex: 00 to 24 / 80 / 85 to 87 … ",
+          "x-stoplight": {
+            "id": "xvei0r3qi12rz"
+          }
+        },
+        "deletetionIndicator": {
+          "type": [
+            "boolean",
+            "null"
+          ],
+          "example": true,
+          "description": "Indicates that all data in this master record is to be deleted.",
+          "x-stoplight": {
+            "id": "oqznq92po270m"
+          }
+        },
+        "customerProfitCenter": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "maxLength": 6,
+          "example": "MUA309",
+          "description": "The partner profit center is used to identify exchanges of goods and services between profit centers. For a profit center that sends a good or service, the receiver profit center is identified as the partner profit center. For the receiver, thesender is the partner profit center.",
+          "x-stoplight": {
+            "id": "epn1xfzdwaum8"
+          }
+        },
+        "segment": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "maxLength": 3,
+          "example": "101",
+          "description": "Segment for Segmental Reporting for internal operations between partners",
+          "x-stoplight": {
+            "id": "2s3pt116cu8hu"
+          }
+        },
+        "customerInformation": {
+          "type": [
+            "array"
+          ],
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "properties": {
+              "companyCode": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "maxLength": 4,
+                "example": "F400",
+                "description": "The company code is an organizational unit within financial accounting.",
+                "x-stoplight": {
+                  "id": "ewr23iine6dlk"
+                }
+              },
+              "aparToleranceGroup": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "maxLength": 4,
+                "example": "KRE1",
+                "description": "Freely definable group code used for customers and vendors, or G/L accounts. Tolerance groups are unique within a company code.",
+                "x-stoplight": {
+                  "id": "7j2ol3kgasv4d"
+                }
+              },
+              "accountByCustomer": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "maxLength": 12,
+                "example": "FL BDC",
+                "description": "This eld contains the account number the company is listed under at the customer.",
+                "x-stoplight": {
+                  "id": "nf5votquiktqn"
+                }
+              },
+              "alternativePayerAccount": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "maxLength": 10,
+                "example": "1410108648",
+                "description": "Account number of the customer for whom automatic payment transactions are to be carried out.",
+                "x-stoplight": {
+                  "id": "es4bs553xierg"
+                }
+              },
+              "customerAccountNote": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "maxLength": 30,
+                "description": "Internal memo of the accounting department",
+                "x-stoplight": {
+                  "id": "ra4aqlvvjasyx"
+                }
+              },
+              "isCustmerVendorClearing": {
+                "type": [
+                  "boolean",
+                  "null"
+                ],
+                "example": true,
+                "description": "Indicates that during automatic payment transactions clearing is made with the corresponding vendor account, and that during manual clearing procedures, the items of that vendor account are also selected.",
+                "x-stoplight": {
+                  "id": "qmh193elma3kz"
+                }
+              },
+              "isToBeLocallyProcessed": {
+                "type": [
+                  "boolean",
+                  "null"
+                ],
+                "example": true,
+                "description": "Indicates that payment transactions and dunning notices are created for the branch.",
+                "x-stoplight": {
+                  "id": "o7uyxduxqxt6r"
+                }
+              },
+              "paymentBlockingReason": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "maxLength": 1,
+                "example": "B",
+                "description": "Block key (enqueue key) that is used to block an open item or an account to payment transactions. ex: Blank / * / A / B / I ...",
+                "x-stoplight": {
+                  "id": "hox90f0ry653w"
+                }
+              },
+              "paymentMethodsCode": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "maxLength": 10,
+                "example": "4",
+                "description": "List of payment methods which may be used in automatic payment transactions with this customer if you do not specify a payment method in the item to be paid.",
+                "x-stoplight": {
+                  "id": "897whfg4usl1b"
+                }
+              },
+              "paymentTermsCode": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "maxLength": 4,
+                "example": "F002",
+                "description": "Key for defining payment terms composed of cash discount percentages and payment periods.",
+                "x-stoplight": {
+                  "id": "ciocwtmzegj2g"
+                }
+              },
+              "isPaymtAdviceSentbyEDI": {
+                "type": [
+                  "boolean",
+                  "null"
+                ],
+                "example": true,
+                "description": "This indicator species that the customer/vendor should be sent all payment advice information by EDI.",
+                "x-stoplight": {
+                  "id": "iydc5j2ww0bjn"
+                }
+              },
+              "reconcilitationAccount": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "maxLength": 10,
+                "example": "4111000",
+                "description": "The reconciliation account in G/L accounting is the account which is updated parallel to the subledger account for normal postings (for example, invoice or payment).",
+                "x-stoplight": {
+                  "id": "hktk5ijw6eg58"
+                }
+              },
+              "isHistoryPaymentRecorded": {
+                "type": [
+                  "boolean",
+                  "null"
+                ],
+                "example": true,
+                "description": "Indicator that the payment history of the customer is to be recorded.",
+                "x-stoplight": {
+                  "id": "yebs73cmfj9c2"
+                }
+              },
+              "customerUser": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "maxLength": 15,
+                "example": "MME CAMERON",
+                "description": "Name or identification code of the accounting clerk at the customer. ex: MME CAMERON or 06.75.20.21.22",
+                "x-stoplight": {
+                  "id": "f5ugy2gf45kez"
+                }
+              },
+              "cashPlanningGroup": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "maxLength": 10,
+                "example": "E2",
+                "description": "In cash management, customers and vendors are allocated to planning groups by means of an entry made in the master record.",
+                "x-stoplight": {
+                  "id": "j6nq8y7ze2zn8"
+                }
+              },
+              "valueAdjustmentKey": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "maxLength": 2,
+                "description": "The value adjustment key controls the way the open items are processed during individual value adjustment.",
+                "x-stoplight": {
+                  "id": "o3e6h21d8pmop"
+                }
+              },
+              "deletetionIndicator": {
+                "type": [
+                  "boolean",
+                  "null"
+                ],
+                "example": true,
+                "description": "Indicates that the company code data in this master record is to be deleted.",
+                "x-stoplight": {
+                  "id": "itf07ztpdif36"
+                }
+              },
+              "deletionblock": {
+                "type": [
+                  "boolean",
+                  "null"
+                ],
+                "example": true,
+                "description": "This indicator specifies that the company code-specific data in the master record may not be deleted.",
+                "x-stoplight": {
+                  "id": "zvlolda6ufedo"
+                }
+              },
+              "itemIsToBePaidSeparately": {
+                "type": [
+                  "boolean",
+                  "null"
+                ],
+                "example": true,
+                "description": "If this indicator is set, every customer/vendor open item is paid separately during automatic payment transactions. This means that open items are not grouped together for payment.",
+                "x-stoplight": {
+                  "id": "08fzhc7zhbtv6"
+                }
+              },
+              "customerDunnings": {
+                "type": [
+                  "array"
+                ],
+                "minItems": 1,
+                "description": "Captures dunning (debt collection) information linked to a customer, including dunning area, level, procedures, and the last dunned date.",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "dunningArea": {
+                      "type": [
+                        "string",
+                        "null"
+                      ],
+                      "maxLength": 2,
+                      "example": "OT",
+                      "description": "The dunning area represents an organizational entity that is responsible for dunning. The dunning areas represent a sub-structure of the company codes.",
+                      "x-stoplight": {
+                        "id": "1vifje3jv1lda"
+                      }
+                    },
+                    "dunningBlock": {
+                      "type": [
+                        "string",
+                        "null"
+                      ],
+                      "maxLength": 1,
+                      "example": "A",
+                      "description": "Key which reflects the reason for a dunning block indicator.",
+                      "x-stoplight": {
+                        "id": "hlpk8cnd5meo1"
+                      }
+                    },
+                    "dunningLevel": {
+                      "type": [
+                        "string",
+                        "null"
+                      ],
+                      "maxLength": 1,
+                      "example": "2",
+                      "description": "Number that species how often an item or account has been dunned.",
+                      "x-stoplight": {
+                        "id": "42hvmfufigyem"
+                      }
+                    },
+                    "dunningProcedure": {
+                      "type": [
+                        "string",
+                        "null"
+                      ],
+                      "maxLength": 4,
+                      "example": "FR01",
+                      "description": "This eld contains the key for the dunning procedure to be used.",
+                      "x-stoplight": {
+                        "id": "yz7kze4f3x72y"
+                      }
+                    },
+                    "dunningRecipient": {
+                      "type": [
+                        "string",
+                        "null"
+                      ],
+                      "maxLength": 10,
+                      "example": "1423950671",
+                      "description": "Account number of the customer who is to be the recipient of the dunning letters.",
+                      "x-stoplight": {
+                        "id": "piqhbmmtsj3qk"
+                      }
+                    },
+                    "lastDunnedOn": {
+                      "type": [
+                        "string",
+                        "null"
+                      ],
+                      "format": "date",
+                      "example": "2024-08-02",
+                      "description": "Date on which the last dunning notice was made.",
+                      "x-stoplight": {
+                        "id": "guu4b4fzzh5n3"
+                      }
+                    },
+                    "dunningClerk": {
+                      "type": [
+                        "string",
+                        "null"
+                      ],
+                      "maxLength": 2,
+                      "example": "MK",
+                      "description": "Identication code for the accounting clerk dealing with dunning letters. ex: 02 / LH / MK ...",
+                      "x-stoplight": {
+                        "id": "c4lko0zw8mu6z"
+                      }
+                    }
+                  },
+                  "x-stoplight": {
+                    "id": "4sg55eiuiumba"
+                  }
+                },
+                "x-stoplight": {
+                  "id": "8zjzeqa89q4u1"
+                }
+              },
+              "withholdingTaxes": {
+                "type": [
+                  "array"
+                ],
+                "minItems": 1,
+                "description": "Tax that is charged at the beginning of the payment flow in some countries. Usually, the party that is subject to tax does not pay the withholding tax over to the tax authorities himself.\nWhen a customer that is authorized to deduct withholding tax pays invoices from a vendor subject to withholding tax, the customer reduces the payment amount by the withholding tax proportion. The customer then pays the tax withheld directly to the appropriate tax authorities.",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "withholdingTaxType": {
+                      "type": [
+                        "string",
+                        "null"
+                      ],
+                      "maxLength": 2,
+                      "example": "1",
+                      "description": "One or more \"withholding tax codes\" are assigned to each withholding tax type. One of the things these codes determine is the various percentage rates for the withholding tax type.",
+                      "x-stoplight": {
+                        "id": "ta1l6jnvxfyhj"
+                      }
+                    },
+                    "withholdingTaxCode": {
+                      "type": [
+                        "string",
+                        "null"
+                      ],
+                      "maxLength": 2,
+                      "example": "0",
+                      "description": "Indicator: withholding tax agent.",
+                      "x-stoplight": {
+                        "id": "lq3dm2ycsjr9r"
+                      }
+                    },
+                    "withholdingTaxNumber": {
+                      "type": [
+                        "string",
+                        "null"
+                      ],
+                      "maxLength": 16,
+                      "example": "80",
+                      "description": "This is a number issued by the tax authorities per withholding tax type.",
+                      "x-stoplight": {
+                        "id": "x27nzhzw5xojf"
+                      }
+                    },
+                    "withholdingTaxAgent": {
+                      "type": [
+                        "boolean",
+                        "null"
+                      ],
+                      "example": true,
+                      "description": "Withholding tax agent",
+                      "x-stoplight": {
+                        "id": "d0uaf2thdq8r8"
+                      }
+                    },
+                    "withholdingTaxCertification": {
+                      "type": [
+                        "string",
+                        "null"
+                      ],
+                      "maxLength": 25,
+                      "example": "1545646454",
+                      "description": "Numbered assigned by the relevant authorities for exemption from withholding tax.",
+                      "x-stoplight": {
+                        "id": "5vflqs4lb6b3m"
+                      }
+                    },
+                    "obligationDateBegin": {
+                      "type": [
+                        "string",
+                        "null"
+                      ],
+                      "format": "date",
+                      "example": "2019-11-21",
+                      "description": "Obligated to withhold tax from date.",
+                      "x-stoplight": {
+                        "id": "0t33n7ev8c85l"
+                      }
+                    },
+                    "obligationDateEnd": {
+                      "type": [
+                        "string",
+                        "null"
+                      ],
+                      "format": "date",
+                      "example": "2019-11-21",
+                      "description": "Obligated to withhold tax until date.",
+                      "x-stoplight": {
+                        "id": "buamx6cmaaebz"
+                      }
+                    }
+                  },
+                  "x-stoplight": {
+                    "id": "w9tp7ndauzh5j"
+                  }
+                },
+                "x-stoplight": {
+                  "id": "bcqt6mbeplf06"
+                }
+              }
+            },
+            "x-stoplight": {
+              "id": "s855akenlzcyp"
+            }
+          },
+          "x-stoplight": {
+            "id": "i93c7kptu6bz0"
+          }
+        },
+        "salesInformation": {
+          "type": [
+            "array"
+          ],
+          "minItems": 1,
+          "description": "Contains details related to the sale of products or services. This includes geographical area, roles of business partner (ship to, sold to, etc.), tax area, incoterms, etc.",
+          "items": {
+            "type": "object",
+            "properties": {
+              "salesOrganizationId": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "maxLength": 4,
+                "example": "A408",
+                "description": "An organizational unit responsible for the sale of certain products or services. The responsibility of a sales organization may include legal liability for products and customer claims.",
+                "x-stoplight": {
+                  "id": "ad5d90x5eil6i"
+                }
+              },
+              "distributionChannel": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "maxLength": 2,
+                "example": "00",
+                "description": "The way in which products or services reach the customer. Typical examples of distribution channels are wholesale, retail, or direct sales.",
+                "x-stoplight": {
+                  "id": "zufupgxiq5m08"
+                }
+              },
+              "division": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "maxLength": 2,
+                "example": "00",
+                "description": "A way of grouping materials, products, or services. The system uses divisions to determine the sales areas and the business areas for a material, product, or service.",
+                "x-stoplight": {
+                  "id": "8hdaxoafgsnb7"
+                }
+              },
+              "isBillingBlockedForCustomer": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "maxLength": 2,
+                "example": "ZZ",
+                "description": "Indicates if further billing activities are blocked for the customer. The block applies throughout the specified sales area.",
+                "x-stoplight": {
+                  "id": "bquwoctyfbtdm"
+                }
+              },
+              "currencyCode": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "maxLength": 5,
+                "example": "EUR",
+                "description": "Customer's currency for a sales area: This currency will be used to settle the customer's charges for the given sales organization.",
+                "x-stoplight": {
+                  "id": "jvalt0jd4yno6"
+                }
+              },
+              "customerGroup": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "maxLength": 2,
+                "example": "8",
+                "description": "This eld contains the account number the company is listed under at the customer.",
+                "x-stoplight": {
+                  "id": "4dwpxru2uvyx2"
+                }
+              },
+              "customerAccountAssignGroup": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "maxLength": 2,
+                "example": "01",
+                "description": "The account assignment group to which the system automatically posts the sales document.",
+                "x-stoplight": {
+                  "id": "yuni59sh528rz"
+                }
+              },
+              "customerPaymentTermsCode": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "maxLength": 4,
+                "example": "F002",
+                "description": "Key for defining payment terms composed of cash discount percentages and payment periods.",
+                "x-stoplight": {
+                  "id": "6qyiffc5wfhvz"
+                }
+              },
+              "cashIndicator": {
+                "type": [
+                  "boolean",
+                  "null"
+                ],
+                "example": true,
+                "description": "If payment terms exists in  ZCYLI_VARPARAM then -> « O ».\notherwise ->  « N ».",
+                "x-stoplight": {
+                  "id": "j5zvu1qbqtrgv"
+                }
+              },
+              "customerPriceGroup": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "maxLength": 2,
+                "example": "01",
+                "description": "A grouping of customers who share the same pricing requirements.",
+                "x-stoplight": {
+                  "id": "aap9a2r2zb3j2"
+                }
+              },
+              "customerPricingProcedure": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "maxLength": 2,
+                "example": "W",
+                "description": "Determines which pricing procedure the system should apply when you create a sales document for the customer.",
+                "x-stoplight": {
+                  "id": "6vx9fg70e7hp2"
+                }
+              },
+              "isDeliveryBlockedForCustomer": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "maxLength": 2,
+                "example": "ZP",
+                "description": "Indicates if further delivery processing is blocked for the customer. The block applies throughout the specified sales area.",
+                "x-stoplight": {
+                  "id": "e9wzsnb9s9oy4"
+                }
+              },
+              "incotermsLocation1": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "maxLength": 70,
+                "example": "PRIVAS CEDEX",
+                "description": "Provides additional information for the primary incoterm.",
+                "x-stoplight": {
+                  "id": "b2cecak9ym1gw"
+                }
+              },
+              "incotermsLocation2": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "maxLength": 70,
+                "description": "Provides additional information for the incoterms. This eld is only available for C-Clauses (if customized appropriately).",
+                "x-stoplight": {
+                  "id": "0800u8bmbsx6o"
+                }
+              },
+              "incotermsVersion": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "maxLength": 4,
+                "description": "An incoterms version is an edition containing a list of international terms for transportation that is defined by the International Chamber of Commerce (ICC).",
+                "x-stoplight": {
+                  "id": "81i825mahiwdy"
+                }
+              },
+              "invoiceCalendarCode": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "maxLength": 2,
+                "example": "FR",
+                "description": "Identifies the calendar that determines the schedule of billing dates for the customer.",
+                "x-stoplight": {
+                  "id": "0qjjb3enbe6lz"
+                }
+              },
+              "isOrderBlockedForCustomer": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "maxLength": 2,
+                "example": "09",
+                "description": "Indicates if further sales order processing is blocked for the customer. The block applies throughout the specified sales area.",
+                "x-stoplight": {
+                  "id": "vxysrtd4aixp1"
+                }
+              },
+              "priceListType": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "maxLength": 2,
+                "example": "01",
+                "description": "Identifies a price list or other condition type (for example, a surcharge or discount).",
+                "x-stoplight": {
+                  "id": "t9xw3c8iwp828"
+                }
+              },
+              "shippingConditionCode": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "maxLength": 2,
+                "example": "Z1",
+                "description": "General shipping strategy for delivering goods from the vendor to the customer. ex: 01 / 02 / Z1 / Z2 ...",
+                "x-stoplight": {
+                  "id": "r4qm8libetqnq"
+                }
+              },
+              "salesDistrict": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "maxLength": 6,
+                "example": "0001",
+                "description": "A geographical sales district or region. ex: 0001 to 0500",
+                "x-stoplight": {
+                  "id": "10jn6pl3lhs9d"
+                }
+              },
+              "invoiceListScheduleCode": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "maxLength": 2,
+                "example": "FR",
+                "description": "An invoice list is a list of invoices (single or collective) that you create for the customer either periodically or on predefined dates.",
+                "x-stoplight": {
+                  "id": "clfn9nchb1kor"
+                }
+              },
+              "exchangeRateType": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "maxLength": 4,
+                "example": "1002",
+                "description": "It is used to define a buying rate, selling rate, or average rate for translating foreign currency amounts. You can use the average rate for the currency translation, and the bank buying and selling rates for valuation of foreign currency amounts. ex: 100* / 1001 / 1002 / 1003 ...",
+                "x-stoplight": {
+                  "id": "jd9j3jbeqe832"
+                }
+              },
+              "customerAdditionalData1": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "maxLength": 3,
+                "example": "06",
+                "description": "Specifies a customer-defined group of customers. You can define up to five different groups of customers, according to the needs of your organization. You specify the groups in the customer master record under \"Additional data\". If you assign a particular customer to one or more groups, the system automatically displays the groups in the header data of corresponding sales orders.",
+                "x-stoplight": {
+                  "id": "2b4c547sfqjxf"
+                }
+              },
+              "customerAdditionalData2": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "maxLength": 3,
+                "example": "11",
+                "description": "Specifies a customer-defined group of customers. You can define up to five different groups of customers, according to the needs of your organization. You specify the groups in the customer master record under \"Additional data\". If you assign a particular customer to one or more groups, the system automatically displays the groups in the header data of corresponding sales orders.",
+                "x-stoplight": {
+                  "id": "vdjpheqht23iw"
+                }
+              },
+              "customerAdditionalData3": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "maxLength": 3,
+                "example": "ZI1",
+                "description": "Specifies a customer-defined group of customers. You can define up to five different groups of customers, according to the needs of your organization. You specify the groups in the customer master record under \"Additional data\". If you assign a particular customer to one or more groups, the system automatically displays the groups in the header data of corresponding sales orders.",
+                "x-stoplight": {
+                  "id": "j1mi4yi9woxgj"
+                }
+              },
+              "customerAdditionalData4": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "maxLength": 3,
+                "example": "C0",
+                "description": "Specifies a customer-defined group of customers. You can define up to five different groups of customers, according to the needs of your organization. You specify the groups in the customer master record under \"Additional data\". If you assign a particular customer to one or more groups, the system automatically displays the groups in the header data of corresponding sales orders.",
+                "x-stoplight": {
+                  "id": "2n8zxave16npl"
+                }
+              },
+              "customerAdditionalData5": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "maxLength": 3,
+                "example": "IE2",
+                "description": "Specifies a customer-defined group of customers. You can define up to five different groups of customers, according to the needs of your organization. You specify the groups in the customer master record under \"Additional data\". If you assign a particular customer to one or more groups, the system automatically displays the groups in the header data of corresponding sales orders.",
+                "x-stoplight": {
+                  "id": "aq5kcfweiagqt"
+                }
+              },
+              "invoiceRecipientEmail": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "maxLength": 241,
+                "example": "marine.masson@sodilor.fr",
+                "description": "Additional email address for customer cockpit",
+                "x-stoplight": {
+                  "id": "cri8mcj8etpbs"
+                }
+              },
+              "invoiceRecipientEmail2": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "maxLength": 241,
+                "example": "marine.masson@sodilor.fr",
+                "description": "Additional email address for customer cockpit",
+                "x-stoplight": {
+                  "id": "fb48jjxsfo4ca"
+                }
+              },
+              "deletetionIndicator": {
+                "type": [
+                  "boolean",
+                  "null"
+                ],
+                "example": true,
+                "description": "Indicates that all data in the master record will be deleted for the specified sales area. Before the deletion is made, the system checks for dependent data that would prevent the deletion.",
+                "x-stoplight": {
+                  "id": "13lin5f3fa1sn"
+                }
+              },
+              "plantId": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "maxLength": 4,
+                "example": "C32A",
+                "description": "Delivering plant (Own or External) from which the goods should be delivered to the customer.",
+                "x-stoplight": {
+                  "id": "rui3izcrnso52"
+                }
+              },
+              "salesAreaTaxes": {
+                "type": "array",
+                "minItems": 0,
+                "description": "A Sales Tax Area is a physical geographical area. Each geographical area can be assessed taxes by different tax authorities for different purposes and for different tax rates.",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "departureCountryCode": {
+                      "type": [
+                        "string",
+                        "null"
+                      ],
+                      "maxLength": 3,
+                      "example": "FR",
+                      "description": "Identifies the country in which the delivery originates.",
+                      "x-stoplight": {
+                        "id": "mnhk3c8et5tze"
+                      }
+                    },
+                    "customerTaxCategory": {
+                      "type": [
+                        "string",
+                        "null"
+                      ],
+                      "maxLength": 4,
+                      "example": "MWST",
+                      "description": "Identifies the condition that the system uses to automatically determine country specific taxes during pricing.",
+                      "x-stoplight": {
+                        "id": "c80f2m4ci4ap2"
+                      }
+                    },
+                    "customerTaxClassification": {
+                      "type": [
+                        "string",
+                        "null"
+                      ],
+                      "maxLength": 1,
+                      "example": "1",
+                      "description": "Species the tax liability of the customer, based on the tax structure of the customer's country.",
+                      "x-stoplight": {
+                        "id": "5c7tfuarehjjq"
+                      }
+                    }
+                  },
+                  "x-stoplight": {
+                    "id": "c8oqyv1qbsb7l"
+                  }
+                },
+                "x-stoplight": {
+                  "id": "xdhe8bcgplb4k"
+                }
+              },
+              "customerPartnerFunctions": {
+                "type": "array",
+                "minItems": 1,
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "partnerFunctionCode": {
+                      "type": [
+                        "string",
+                        "null"
+                      ],
+                      "maxLength": 2,
+                      "example": "Z0",
+                      "description": "The abbreviated form of the name that identifies the partner function.",
+                      "x-stoplight": {
+                        "id": "3vt9bixce52w0"
+                      }
+                    },
+                    "partnerCounter": {
+                      "type": [
+                        "string",
+                        "null"
+                      ],
+                      "maxLength": 3,
+                      "example": "10",
+                      "description": "The sequential number that the system applies when there is more than one partner for a particular partner function.",
+                      "x-stoplight": {
+                        "id": "j2h07vqubremk"
+                      }
+                    },
+                    "isDefaultPartner": {
+                      "type": [
+                        "boolean",
+                        "null"
+                      ],
+                      "example": true,
+                      "description": "Species a partner as the default for a particular partner function.",
+                      "x-stoplight": {
+                        "id": "erl1f8ebkyxs5"
+                      }
+                    },
+                    "businessPartnerCustomerNumber": {
+                      "type": [
+                        "string",
+                        "null"
+                      ],
+                      "maxLength": 10,
+                      "example": "1410101751",
+                      "description": "Customer number of Business Partner",
+                      "x-stoplight": {
+                        "id": "o8wyoe1xh7oks"
+                      }
+                    },
+                    "customerPartnerDescription": {
+                      "type": [
+                        "string",
+                        "null"
+                      ],
+                      "maxLength": 30,
+                      "example": "ORLEANS METROPOLE",
+                      "description": "Customer description of partner (plant, storage location)",
+                      "x-stoplight": {
+                        "id": "nutxxfjn1pnv7"
+                      }
+                    },
+                    "personnelNumber": {
+                      "type": [
+                        "string",
+                        "null"
+                      ],
+                      "maxLength": 8,
+                      "example": "0",
+                      "description": "Internal key for identifying a person in Business Address Services.",
+                      "x-stoplight": {
+                        "id": "1vtmusa78ai0g"
+                      }
+                    },
+                    "partnerAddressId": {
+                      "type": [
+                        "string",
+                        "null"
+                      ],
+                      "maxLength": 10,
+                      "example": "8871883",
+                      "description": "Internal key for identifying a Business Address Services address.",
+                      "x-stoplight": {
+                        "id": "j2v0fidapd4zh"
+                      }
+                    },
+                    "contactPerson": {
+                      "type": [
+                        "string",
+                        "null"
+                      ],
+                      "maxLength": 10,
+                      "example": "0",
+                      "description": "The contact person number helps to uniquely identify the contact person if it has the customer role FLCU00 or FLCU01.",
+                      "x-stoplight": {
+                        "id": "phgswdloyyzl4"
+                      }
+                    }
+                  },
+                  "x-stoplight": {
+                    "id": "787r87fsciwd7"
+                  }
+                },
+                "x-stoplight": {
+                  "id": "do3wnflj63eja"
+                }
+              }
+            },
+            "x-stoplight": {
+              "id": "waxyqi1bz1kjr"
+            }
+          },
+          "x-stoplight": {
+            "id": "69zd1ic2ijo3i"
+          }
+        }
+      },
+      "x-stoplight": {
+        "id": "l7ikz3ypq8w19"
+      }
+    }
+  }
+}
