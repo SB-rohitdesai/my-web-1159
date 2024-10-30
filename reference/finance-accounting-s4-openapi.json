@@ -242,7 +242,7 @@
         }
       }
     },
-    "/customers/{customerId}": {
+    "/users/{customerId}": {
       "get": {
         "summary": "allows external applications to retrieve customer master data.",
         "tags": [
